@@ -1,0 +1,603 @@
+Structure du dossier pour le volume SSD
+Le num‚ro de s‚rie du volume est 6899-65ED
+C:.
+³   appsettings.Development.json
+³   appsettings.json
+³   LibraryBook.csproj
+³   LibraryBook.csproj.user
+³   LibraryBook.sln
+³   Program.cs
+³   tree.txt
+³   
+ÃÄÄÄAreas
+³   ÀÄÄÄIdentity
+³       ÀÄÄÄPages
+³               _ViewStart.cshtml
+³               
+ÃÄÄÄbin
+³   ÀÄÄÄDebug
+³       ÀÄÄÄnet8.0
+³           ³   appsettings.Development.json
+³           ³   appsettings.json
+³           ³   Azure.Core.dll
+³           ³   Azure.Identity.dll
+³           ³   dotnet-aspnet-codegenerator-design.dll
+³           ³   Humanizer.dll
+³           ³   LibraryBook.deps.json
+³           ³   LibraryBook.dll
+³           ³   LibraryBook.exe
+³           ³   LibraryBook.pdb
+³           ³   LibraryBook.runtimeconfig.json
+³           ³   LibraryBook.staticwebassets.runtime.json
+³           ³   Microsoft.AspNetCore.Authorization.dll
+³           ³   Microsoft.AspNetCore.Components.dll
+³           ³   Microsoft.AspNetCore.Components.Forms.dll
+³           ³   Microsoft.AspNetCore.Components.QuickGrid.dll
+³           ³   Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.dll
+³           ³   Microsoft.AspNetCore.Components.Web.dll
+³           ³   Microsoft.AspNetCore.Cryptography.Internal.dll
+³           ³   Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+³           ³   Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+³           ³   Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+³           ³   Microsoft.AspNetCore.Identity.UI.dll
+³           ³   Microsoft.AspNetCore.Metadata.dll
+³           ³   Microsoft.AspNetCore.Razor.Language.dll
+³           ³   Microsoft.Bcl.AsyncInterfaces.dll
+³           ³   Microsoft.Build.dll
+³           ³   Microsoft.Build.Framework.dll
+³           ³   Microsoft.CodeAnalysis.AnalyzerUtilities.dll
+³           ³   Microsoft.CodeAnalysis.CSharp.dll
+³           ³   Microsoft.CodeAnalysis.CSharp.Features.dll
+³           ³   Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+³           ³   Microsoft.CodeAnalysis.dll
+³           ³   Microsoft.CodeAnalysis.Elfie.dll
+³           ³   Microsoft.CodeAnalysis.Features.dll
+³           ³   Microsoft.CodeAnalysis.Razor.dll
+³           ³   Microsoft.CodeAnalysis.Scripting.dll
+³           ³   Microsoft.CodeAnalysis.Workspaces.dll
+³           ³   Microsoft.Data.SqlClient.dll
+³           ³   Microsoft.DiaSymReader.dll
+³           ³   Microsoft.DotNet.Scaffolding.Shared.dll
+³           ³   Microsoft.EntityFrameworkCore.Abstractions.dll
+³           ³   Microsoft.EntityFrameworkCore.Design.dll
+³           ³   Microsoft.EntityFrameworkCore.dll
+³           ³   Microsoft.EntityFrameworkCore.Relational.dll
+³           ³   Microsoft.EntityFrameworkCore.SqlServer.dll
+³           ³   Microsoft.Extensions.DependencyModel.dll
+³           ³   Microsoft.Extensions.FileProviders.Embedded.dll
+³           ³   Microsoft.Extensions.Identity.Core.dll
+³           ³   Microsoft.Extensions.Identity.Stores.dll
+³           ³   Microsoft.Extensions.Options.dll
+³           ³   Microsoft.Identity.Client.dll
+³           ³   Microsoft.Identity.Client.Extensions.Msal.dll
+³           ³   Microsoft.IdentityModel.Abstractions.dll
+³           ³   Microsoft.IdentityModel.JsonWebTokens.dll
+³           ³   Microsoft.IdentityModel.Logging.dll
+³           ³   Microsoft.IdentityModel.Protocols.dll
+³           ³   Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+³           ³   Microsoft.IdentityModel.Tokens.dll
+³           ³   Microsoft.JSInterop.dll
+³           ³   Microsoft.NET.StringTools.dll
+³           ³   Microsoft.SqlServer.Server.dll
+³           ³   Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+³           ³   Microsoft.VisualStudio.Web.CodeGeneration.dll
+³           ³   Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+³           ³   Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+³           ³   Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+³           ³   Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+³           ³   Microsoft.Win32.SystemEvents.dll
+³           ³   Mono.TextTemplating.dll
+³           ³   Newtonsoft.Json.dll
+³           ³   NuGet.Common.dll
+³           ³   NuGet.Configuration.dll
+³           ³   NuGet.DependencyResolver.Core.dll
+³           ³   NuGet.Frameworks.dll
+³           ³   NuGet.LibraryModel.dll
+³           ³   NuGet.Packaging.dll
+³           ³   NuGet.ProjectModel.dll
+³           ³   NuGet.Protocol.dll
+³           ³   NuGet.Versioning.dll
+³           ³   System.CodeDom.dll
+³           ³   System.Composition.AttributedModel.dll
+³           ³   System.Composition.Convention.dll
+³           ³   System.Composition.Hosting.dll
+³           ³   System.Composition.Runtime.dll
+³           ³   System.Composition.TypedParts.dll
+³           ³   System.Configuration.ConfigurationManager.dll
+³           ³   System.Drawing.Common.dll
+³           ³   System.IdentityModel.Tokens.Jwt.dll
+³           ³   System.Memory.Data.dll
+³           ³   System.Reflection.MetadataLoadContext.dll
+³           ³   System.Runtime.Caching.dll
+³           ³   System.Security.Cryptography.ProtectedData.dll
+³           ³   System.Security.Permissions.dll
+³           ³   System.Windows.Extensions.dll
+³           ³   
+³           ÃÄÄÄaf
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄar
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄaz
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄbg
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄbn-BD
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄcs
+³           ³       Humanizer.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+³           ³       Microsoft.CodeAnalysis.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.resources.dll
+³           ³       Microsoft.CodeAnalysis.Scripting.resources.dll
+³           ³       Microsoft.CodeAnalysis.Workspaces.resources.dll
+³           ³       
+³           ÃÄÄÄda
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄde
+³           ³       Humanizer.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+³           ³       Microsoft.CodeAnalysis.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.resources.dll
+³           ³       Microsoft.CodeAnalysis.Scripting.resources.dll
+³           ³       Microsoft.CodeAnalysis.Workspaces.resources.dll
+³           ³       
+³           ÃÄÄÄel
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄes
+³           ³       Humanizer.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+³           ³       Microsoft.CodeAnalysis.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.resources.dll
+³           ³       Microsoft.CodeAnalysis.Scripting.resources.dll
+³           ³       Microsoft.CodeAnalysis.Workspaces.resources.dll
+³           ³       
+³           ÃÄÄÄfa
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄfi-FI
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄfr
+³           ³       Humanizer.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+³           ³       Microsoft.CodeAnalysis.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.resources.dll
+³           ³       Microsoft.CodeAnalysis.Scripting.resources.dll
+³           ³       Microsoft.CodeAnalysis.Workspaces.resources.dll
+³           ³       
+³           ÃÄÄÄfr-BE
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄhe
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄhr
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄhu
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄhy
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄid
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄis
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄit
+³           ³       Humanizer.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+³           ³       Microsoft.CodeAnalysis.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.resources.dll
+³           ³       Microsoft.CodeAnalysis.Scripting.resources.dll
+³           ³       Microsoft.CodeAnalysis.Workspaces.resources.dll
+³           ³       
+³           ÃÄÄÄja
+³           ³       Humanizer.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+³           ³       Microsoft.CodeAnalysis.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.resources.dll
+³           ³       Microsoft.CodeAnalysis.Scripting.resources.dll
+³           ³       Microsoft.CodeAnalysis.Workspaces.resources.dll
+³           ³       
+³           ÃÄÄÄko
+³           ³       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+³           ³       Microsoft.CodeAnalysis.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.resources.dll
+³           ³       Microsoft.CodeAnalysis.Scripting.resources.dll
+³           ³       Microsoft.CodeAnalysis.Workspaces.resources.dll
+³           ³       
+³           ÃÄÄÄko-KR
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄku
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄlv
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄms-MY
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄmt
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄnb
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄnb-NO
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄnl
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄpl
+³           ³       Humanizer.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+³           ³       Microsoft.CodeAnalysis.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.resources.dll
+³           ³       Microsoft.CodeAnalysis.Scripting.resources.dll
+³           ³       Microsoft.CodeAnalysis.Workspaces.resources.dll
+³           ³       
+³           ÃÄÄÄpt
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄpt-BR
+³           ³       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+³           ³       Microsoft.CodeAnalysis.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.resources.dll
+³           ³       Microsoft.CodeAnalysis.Scripting.resources.dll
+³           ³       Microsoft.CodeAnalysis.Workspaces.resources.dll
+³           ³       
+³           ÃÄÄÄro
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄru
+³           ³       Humanizer.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+³           ³       Microsoft.CodeAnalysis.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.resources.dll
+³           ³       Microsoft.CodeAnalysis.Scripting.resources.dll
+³           ³       Microsoft.CodeAnalysis.Workspaces.resources.dll
+³           ³       
+³           ÃÄÄÄruntimes
+³           ³   ÃÄÄÄunix
+³           ³   ³   ÀÄÄÄlib
+³           ³   ³       ÀÄÄÄnet6.0
+³           ³   ³               Microsoft.Data.SqlClient.dll
+³           ³   ³               
+³           ³   ÃÄÄÄwin
+³           ³   ³   ÀÄÄÄlib
+³           ³   ³       ÃÄÄÄnet6.0
+³           ³   ³       ³       Microsoft.Data.SqlClient.dll
+³           ³   ³       ³       System.Runtime.Caching.dll
+³           ³   ³       ³       
+³           ³   ³       ÀÄÄÄnet7.0
+³           ³   ³               Microsoft.Win32.SystemEvents.dll
+³           ³   ³               System.Drawing.Common.dll
+³           ³   ³               System.Security.Cryptography.ProtectedData.dll
+³           ³   ³               System.Windows.Extensions.dll
+³           ³   ³               
+³           ³   ÃÄÄÄwin-arm
+³           ³   ³   ÀÄÄÄnative
+³           ³   ³           Microsoft.Data.SqlClient.SNI.dll
+³           ³   ³           
+³           ³   ÃÄÄÄwin-arm64
+³           ³   ³   ÀÄÄÄnative
+³           ³   ³           Microsoft.Data.SqlClient.SNI.dll
+³           ³   ³           
+³           ³   ÃÄÄÄwin-x64
+³           ³   ³   ÀÄÄÄnative
+³           ³   ³           Microsoft.Data.SqlClient.SNI.dll
+³           ³   ³           
+³           ³   ÀÄÄÄwin-x86
+³           ³       ÀÄÄÄnative
+³           ³               Microsoft.Data.SqlClient.SNI.dll
+³           ³               
+³           ÃÄÄÄsk
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄsl
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄsr
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄsr-Latn
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄsv
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄth-TH
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄtr
+³           ³       Humanizer.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+³           ³       Microsoft.CodeAnalysis.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.resources.dll
+³           ³       Microsoft.CodeAnalysis.Scripting.resources.dll
+³           ³       Microsoft.CodeAnalysis.Workspaces.resources.dll
+³           ³       
+³           ÃÄÄÄuk
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄuz-Cyrl-UZ
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄuz-Latn-UZ
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄvi
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄzh-CN
+³           ³       Humanizer.resources.dll
+³           ³       
+³           ÃÄÄÄzh-Hans
+³           ³       Humanizer.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.resources.dll
+³           ³       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+³           ³       Microsoft.CodeAnalysis.Features.resources.dll
+³           ³       Microsoft.CodeAnalysis.resources.dll
+³           ³       Microsoft.CodeAnalysis.Scripting.resources.dll
+³           ³       Microsoft.CodeAnalysis.Workspaces.resources.dll
+³           ³       
+³           ÀÄÄÄzh-Hant
+³                   Humanizer.resources.dll
+³                   Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+³                   Microsoft.CodeAnalysis.CSharp.resources.dll
+³                   Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+³                   Microsoft.CodeAnalysis.Features.resources.dll
+³                   Microsoft.CodeAnalysis.resources.dll
+³                   Microsoft.CodeAnalysis.Scripting.resources.dll
+³                   Microsoft.CodeAnalysis.Workspaces.resources.dll
+³                   
+ÃÄÄÄControllers
+³       BooksController.cs
+³       HomeController.cs
+³       LoansController.cs
+³       UsersController.cs
+³       
+ÃÄÄÄData
+³   ³   ApplicationDbContext.cs
+³   ³   LibraryBookContext.cs
+³   ³   
+³   ÀÄÄÄMigrations
+³           00000000000000_CreateIdentitySchema.cs
+³           00000000000000_CreateIdentitySchema.Designer.cs
+³           20240124174852_2.cs
+³           20240124174852_2.Designer.cs
+³           20240124174949_3.cs
+³           20240124174949_3.Designer.cs
+³           20240124175423_4.cs
+³           20240124175423_4.Designer.cs
+³           ApplicationDbContextModelSnapshot.cs
+³           
+ÃÄÄÄMigrations
+³       20240125193634_InitialCreate.cs
+³       20240125193634_InitialCreate.Designer.cs
+³       LibraryBookContextModelSnapshot.cs
+³       
+ÃÄÄÄModels
+³       Book.cs
+³       ErrorViewModel.cs
+³       Loan.cs
+³       User.cs
+³       
+ÃÄÄÄobj
+³   ³   LibraryBook.csproj.EntityFrameworkCore.targets
+³   ³   LibraryBook.csproj.nuget.dgspec.json
+³   ³   LibraryBook.csproj.nuget.g.props
+³   ³   LibraryBook.csproj.nuget.g.targets
+³   ³   project.assets.json
+³   ³   project.nuget.cache
+³   ³   
+³   ÀÄÄÄDebug
+³       ÀÄÄÄnet8.0
+³           ³   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+³           ³   apphost.exe
+³           ³   LibraryBook.AssemblyInfo.cs
+³           ³   LibraryBook.AssemblyInfoInputs.cache
+³           ³   LibraryBook.assets.cache
+³           ³   LibraryBook.csproj.AssemblyReference.cache
+³           ³   LibraryBook.csproj.BuildWithSkipAnalyzers
+³           ³   LibraryBook.csproj.CopyComplete
+³           ³   LibraryBook.csproj.CoreCompileInputs.cache
+³           ³   LibraryBook.csproj.FileListAbsolute.txt
+³           ³   LibraryBook.dll
+³           ³   LibraryBook.GeneratedMSBuildEditorConfig.editorconfig
+³           ³   LibraryBook.genruntimeconfig.cache
+³           ³   LibraryBook.GlobalUsings.g.cs
+³           ³   LibraryBook.MvcApplicationPartsAssemblyInfo.cache
+³           ³   LibraryBook.MvcApplicationPartsAssemblyInfo.cs
+³           ³   LibraryBook.pdb
+³           ³   LibraryBook.RazorAssemblyInfo.cache
+³           ³   LibraryBook.RazorAssemblyInfo.cs
+³           ³   project.razor.vs.bin
+³           ³   staticwebassets.build.json
+³           ³   staticwebassets.development.json
+³           ³   staticwebassets.pack.json
+³           ³   
+³           ÃÄÄÄref
+³           ³       LibraryBook.dll
+³           ³       
+³           ÃÄÄÄrefint
+³           ³       LibraryBook.dll
+³           ³       
+³           ÃÄÄÄscopedcss
+³           ³   ÃÄÄÄbundle
+³           ³   ³       LibraryBook.styles.css
+³           ³   ³       
+³           ³   ÃÄÄÄprojectbundle
+³           ³   ³       LibraryBook.bundle.scp.css
+³           ³   ³       
+³           ³   ÀÄÄÄViews
+³           ³       ÀÄÄÄShared
+³           ³               _Layout.cshtml.rz.scp.css
+³           ³               
+³           ÀÄÄÄstaticwebassets
+³                   msbuild.build.LibraryBook.props
+³                   msbuild.buildMultiTargeting.LibraryBook.props
+³                   msbuild.buildTransitive.LibraryBook.props
+³                   msbuild.LibraryBook.Microsoft.AspNetCore.StaticWebAssets.props
+³                   
+ÃÄÄÄProperties
+³       launchSettings.json
+³       serviceDependencies.json
+³       serviceDependencies.local.json
+³       serviceDependencies.local.json.user
+³       
+ÃÄÄÄViews
+³   ³   _ViewImports.cshtml
+³   ³   _ViewStart.cshtml
+³   ³   
+³   ÃÄÄÄBooks
+³   ³       Create.cshtml
+³   ³       Delete.cshtml
+³   ³       Details.cshtml
+³   ³       Edit.cshtml
+³   ³       Index.cshtml
+³   ³       
+³   ÃÄÄÄHome
+³   ³       Index.cshtml
+³   ³       Privacy.cshtml
+³   ³       
+³   ÃÄÄÄLoans
+³   ³       Create.cshtml
+³   ³       Delete.cshtml
+³   ³       Details.cshtml
+³   ³       Edit.cshtml
+³   ³       Index.cshtml
+³   ³       
+³   ÃÄÄÄShared
+³   ³       Error.cshtml
+³   ³       _Layout.cshtml
+³   ³       _Layout.cshtml.css
+³   ³       _LoginPartial.cshtml
+³   ³       _ValidationScriptsPartial.cshtml
+³   ³       
+³   ÀÄÄÄUsers
+³           Create.cshtml
+³           Delete.cshtml
+³           Details.cshtml
+³           Edit.cshtml
+³           Index.cshtml
+³           
+ÀÄÄÄwwwroot
+    ³   favicon.ico
+    ³   
+    ÃÄÄÄcss
+    ³       site.css
+    ³       
+    ÃÄÄÄjs
+    ³       site.js
+    ³       
+    ÀÄÄÄlib
+        ÃÄÄÄbootstrap
+        ³   ³   LICENSE
+        ³   ³   
+        ³   ÀÄÄÄdist
+        ³       ÃÄÄÄcss
+        ³       ³       bootstrap-grid.css
+        ³       ³       bootstrap-grid.css.map
+        ³       ³       bootstrap-grid.min.css
+        ³       ³       bootstrap-grid.min.css.map
+        ³       ³       bootstrap-grid.rtl.css
+        ³       ³       bootstrap-grid.rtl.css.map
+        ³       ³       bootstrap-grid.rtl.min.css
+        ³       ³       bootstrap-grid.rtl.min.css.map
+        ³       ³       bootstrap-reboot.css
+        ³       ³       bootstrap-reboot.css.map
+        ³       ³       bootstrap-reboot.min.css
+        ³       ³       bootstrap-reboot.min.css.map
+        ³       ³       bootstrap-reboot.rtl.css
+        ³       ³       bootstrap-reboot.rtl.css.map
+        ³       ³       bootstrap-reboot.rtl.min.css
+        ³       ³       bootstrap-reboot.rtl.min.css.map
+        ³       ³       bootstrap-utilities.css
+        ³       ³       bootstrap-utilities.css.map
+        ³       ³       bootstrap-utilities.min.css
+        ³       ³       bootstrap-utilities.min.css.map
+        ³       ³       bootstrap-utilities.rtl.css
+        ³       ³       bootstrap-utilities.rtl.css.map
+        ³       ³       bootstrap-utilities.rtl.min.css
+        ³       ³       bootstrap-utilities.rtl.min.css.map
+        ³       ³       bootstrap.css
+        ³       ³       bootstrap.css.map
+        ³       ³       bootstrap.min.css
+        ³       ³       bootstrap.min.css.map
+        ³       ³       bootstrap.rtl.css
+        ³       ³       bootstrap.rtl.css.map
+        ³       ³       bootstrap.rtl.min.css
+        ³       ³       bootstrap.rtl.min.css.map
+        ³       ³       
+        ³       ÀÄÄÄjs
+        ³               bootstrap.bundle.js
+        ³               bootstrap.bundle.js.map
+        ³               bootstrap.bundle.min.js
+        ³               bootstrap.bundle.min.js.map
+        ³               bootstrap.esm.js
+        ³               bootstrap.esm.js.map
+        ³               bootstrap.esm.min.js
+        ³               bootstrap.esm.min.js.map
+        ³               bootstrap.js
+        ³               bootstrap.js.map
+        ³               bootstrap.min.js
+        ³               bootstrap.min.js.map
+        ³               
+        ÃÄÄÄjquery
+        ³   ³   LICENSE.txt
+        ³   ³   
+        ³   ÀÄÄÄdist
+        ³           jquery.js
+        ³           jquery.min.js
+        ³           jquery.min.map
+        ³           
+        ÃÄÄÄjquery-validation
+        ³   ³   LICENSE.md
+        ³   ³   
+        ³   ÀÄÄÄdist
+        ³           additional-methods.js
+        ³           additional-methods.min.js
+        ³           jquery.validate.js
+        ³           jquery.validate.min.js
+        ³           
+        ÀÄÄÄjquery-validation-unobtrusive
+                jquery.validate.unobtrusive.js
+                jquery.validate.unobtrusive.min.js
+                LICENSE.txt
+                

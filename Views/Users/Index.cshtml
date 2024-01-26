@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<LibraryBook.Areas.Data.LibraryUser>
-
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer _localizer
 
 @{
     ViewData["Title"] = "Index";
@@ -8,7 +9,7 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">@_localizer["Nieuw aanmaken"]</a>
 </p>
 
 <form asp-action="Index" method="get">
@@ -20,7 +21,7 @@
             <option value="@role">@role</option>
         }
     </select>
-    <button type="submit">Filter</button>
+    <button type="submit">@_localizer["Filtreren"]</button>
 </form>
 
 <table class="table">
@@ -45,9 +46,9 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id">@_localizer["Wijzigen"]</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">@_localizer["Details"]</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">@_localizer["Verwijderen"]</a>
             </td>
         </tr>
 }

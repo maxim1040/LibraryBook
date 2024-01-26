@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<LibraryBook.Models.Book>
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer _localizer
 
 @{
     ViewData["Title"] = "Index";
@@ -8,7 +10,14 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">@_localizer["Aanmaken"]</a>
+</p>
+<p>
+    <form asp-action="Index" asp-controller="Books" method="get">
+        @_localizer["Zoeken"]
+        <input type="text" name="searchField" />
+        <input type="submit" value="@_localizer["Zoeken"]" />
+    </form>
 </p>
 <table class="table">
     <thead>
@@ -49,11 +58,24 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Loaner.UserName)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
+                @if (User.IsInRole("User"))
+                {
+                    @if (!item.IsLoaned)
+                    {
+                        <td>
+                            <a asp-action="Create" asp-controller="Loans" asp-route-bookId="@item.Id" class="btn btn-primary">@_localizer["Lenen"]</a>
+                        </td>
+                    }
+                }
+                else if (User.IsInRole("Admin"))
+                {
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">@_localizer["Wijzigen"]</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">@_localizer["Details"]</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">@_localizer["Verwijderen"]</a>
+                    </td>
+                }
+
         </tr>
 }
     </tbody>

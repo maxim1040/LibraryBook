@@ -16,6 +16,22 @@ namespace LibraryBook.Data
 
                 LibraryUser user1 = null;
                 LibraryUser user2 = null;
+                Book book1 = null;
+                Book book2 = null;
+
+                if (!context.Languages.Any())
+                {
+                    context.AddRange(
+                        new Language { Id = "- ", Name = "-", IsSystemLanguage = false, IsAvailable = DateTime.MaxValue },
+                        new Language { Id = "en", Name = "English", IsSystemLanguage = true },
+                        new Language { Id = "nl", Name = "Nederlands", IsSystemLanguage = true },
+                        new Language { Id = "fr", Name = "français", IsSystemLanguage = true },
+                        new Language { Id = "de", Name = "Deutsch", IsSystemLanguage = true }
+                        );
+                    context.SaveChanges();
+                }
+
+                Language.GetLanguages(context);
 
                 if (!context.Users.Any())
                 {
@@ -41,29 +57,6 @@ namespace LibraryBook.Data
                     await userManager.CreateAsync(user1, "Test123.");
                     await userManager.CreateAsync(user2, "Test123.");
 
-                    if (!context.Books.Any())
-                    {
-                        var book1 = new Book
-                        {
-                            Title = "Harry Potter and the Philosopher's Stone",
-                            Author = "J.K. Rowling",
-                            ISBN = "9780747532743",
-                            IsLoaned = true,
-                            LoanerUserName = user1.UserName  // Use UserName instead of Id
-                        };
-
-                        var book2 = new Book
-                        {
-                            Title = "Moby Dick",
-                            Author = "Herman Melville",
-                            ISBN = "9780747538493",
-                            IsLoaned = false,
-                            LoanerUserName = null
-                        };
-                        context.Books.AddRange(book1, book2);
-                        await context.SaveChangesAsync();
-                    }
-
                     if (!context.Roles.Any())
                     {
                         context.Roles.AddRange(
@@ -77,8 +70,30 @@ namespace LibraryBook.Data
                         await context.SaveChangesAsync(); // Save changes asynchronously
                     }
 
-                }
+                    if (!context.Books.Any())
+                    {
+                        book1 = new Book
+                        {
+                            Title = "Harry Potter and the Philosopher's Stone",
+                            Author = "J.K. Rowling",
+                            ISBN = "9780747532743",
+                            IsLoaned = true,
+                            LibraryUserId = user1.Id    
+                        };
 
+                        book2 = new Book
+                        {
+                            Title = "Moby Dick",
+                            Author = "Herman Melville",
+                            ISBN = "9780747538493",
+                            IsLoaned = false,
+                            LibraryUserId = null
+                        };
+
+                        context.Books.AddRange(book1, book2);
+                        await context.SaveChangesAsync();
+                    }
+                }
             }
         }
     }

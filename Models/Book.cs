@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Security.Permissions;
 
-// Book.cs
-// Book.cs
+
 namespace LibraryBook.Models
 {
     public class Book
@@ -12,18 +12,18 @@ namespace LibraryBook.Models
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Title is required.")]
-        [StringLength(100, ErrorMessage = "Title cannot be longer than 100 characters.")]
-        [Display(Name = "Title")]
+        [Required(ErrorMessage = "Deze veld is verplicht")]
+        [StringLength(100, ErrorMessage = "Dit kan niet langer zijn dan 100 karakters")]
+        [Display(Name = "Titel")]
         public string Title { get; set; }
 
-        [Required(ErrorMessage = "Author is required.")]
-        [StringLength(100, ErrorMessage = "Author cannot be longer than 100 characters.")]
-        [Display(Name = "Author")]
+        [Required(ErrorMessage = "Deze veld is verplicht")]
+        [StringLength(100, ErrorMessage = "Dit kan niet langer zijn dan 100 karakters")]
+        [Display(Name = "Auteur")]
         public string Author { get; set; }
 
-        [Required(ErrorMessage = "ISBN is required.")]
-        [StringLength(13, ErrorMessage = "ISBN should be 13 characters long.")]
+        [Required(ErrorMessage = "Deze veld is verplicht")]
+        [StringLength(13, ErrorMessage = "Dit kan niet langer zijn dan 13 karakters")]
         [Display(Name = "ISBN")]
         public string ISBN { get; set; }
 
@@ -32,11 +32,12 @@ namespace LibraryBook.Models
 
         [ForeignKey("Loaner")]
         [Display(Name = "Geleend door")]
-        public string? LoanerUserName { get; set; }
+        public string? LibraryUserId { get; set; }
         public LibraryUser? Loaner { get; set; }
 
         // Navigatie-eigenschappen
         public List<Loan> Loans { get; set; }
+
     }
 }
 

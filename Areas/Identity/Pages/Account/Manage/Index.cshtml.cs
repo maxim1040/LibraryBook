@@ -10,6 +10,7 @@ using LibraryBook.Areas.Data;
 using LibraryBook.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace LibraryBook.Areas.Identity.Pages.Account.Manage

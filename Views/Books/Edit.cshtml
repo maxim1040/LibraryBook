@@ -1,19 +1,21 @@
 ﻿@model LibraryBook.Models.Book
-
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer _localizer
 @{
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
+<h1>@_localizer["Wijzigen"]</h1>
 
-<h4>Book</h4>
+<h4>@_localizer["Boek"]</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="Loans" />
             <div class="form-group">
                 <label asp-for="Title" class="control-label"></label>
                 <input asp-for="Title" class="form-control" />
@@ -35,19 +37,19 @@
                 </label>
             </div>
             <div class="form-group">
-                <label asp-for="LoanerUserName" class="control-label"></label>
-                <select asp-for="LoanerUserName" class="form-control" asp-items="ViewBag.LoanerUserName"></select>
-                <span asp-validation-for="LoanerUserName" class="text-danger"></span>
+                <label asp-for="LibraryUserId" class="control-label"></label>
+                <select asp-for="LibraryUserId" class="form-control" asp-items="ViewBag.LoanerUserName"></select>
+                <span asp-validation-for="LibraryUserId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="@_localizer["Bewaar"]" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">@_localizer["Terug naar lijst"]</a>
 </div>
 
 @section Scripts {

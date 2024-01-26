@@ -26,6 +26,34 @@ namespace LibraryBook.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Languages",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(2)", maxLength: 2, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsSystemLanguage = table.Column<bool>(type: "bit", nullable: false),
+                    IsAvailable = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Languages", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "LoginModel",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LoginModel", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "User",
                 columns: table => new
                 {
@@ -188,14 +216,14 @@ namespace LibraryBook.Migrations
                     Author = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     ISBN = table.Column<string>(type: "nvarchar(13)", maxLength: 13, nullable: false),
                     IsLoaned = table.Column<bool>(type: "bit", nullable: false),
-                    LoanerUserName = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    LibraryUserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Books", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Books_AspNetUsers_LoanerUserName",
-                        column: x => x.LoanerUserName,
+                        name: "FK_Books_AspNetUsers_LibraryUserId",
+                        column: x => x.LibraryUserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id");
                 });
@@ -210,9 +238,7 @@ namespace LibraryBook.Migrations
                     ReturnDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Deleted = table.Column<DateTime>(type: "datetime2", nullable: false),
                     BookId = table.Column<int>(type: "int", nullable: true),
-                    BooksId = table.Column<int>(type: "int", nullable: true),
                     LoanerId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    SelectedBookId = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
@@ -227,12 +253,8 @@ namespace LibraryBook.Migrations
                         name: "FK_Loans_Books_BookId",
                         column: x => x.BookId,
                         principalTable: "Books",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Loans_Books_BooksId",
-                        column: x => x.BooksId,
-                        principalTable: "Books",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Loans_User_UserId",
                         column: x => x.UserId,
@@ -285,19 +307,14 @@ namespace LibraryBook.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Books_LoanerUserName",
+                name: "IX_Books_LibraryUserId",
                 table: "Books",
-                column: "LoanerUserName");
+                column: "LibraryUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Loans_BookId",
                 table: "Loans",
                 column: "BookId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Loans_BooksId",
-                table: "Loans",
-                column: "BooksId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Loans_LoanerId",
@@ -329,7 +346,13 @@ namespace LibraryBook.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Languages");
+
+            migrationBuilder.DropTable(
                 name: "Loans");
+
+            migrationBuilder.DropTable(
+                name: "LoginModel");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

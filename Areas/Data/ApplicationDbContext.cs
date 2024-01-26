@@ -1,6 +1,7 @@
 ﻿using LibraryBook.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using LibraryBook.ApiModels;
 
 namespace LibraryBook.Areas.Data
 {
@@ -13,7 +14,7 @@ namespace LibraryBook.Areas.Data
         public DbSet<Book> Books { get; set; } = default!;
         public DbSet<Loan> Loans { get; set; } = default!;
         public DbSet<LibraryUser> Users { get; set; } = default!;
-
+        public DbSet<Language> Languages { get; set; } = default!;
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
@@ -21,7 +22,8 @@ namespace LibraryBook.Areas.Data
             modelBuilder.Entity<Loan>()
                 .HasOne(l => l.Book)
                 .WithMany(b => b.Loans)
-                .HasForeignKey(l => l.BookId);
+                .HasForeignKey(l => l.BookId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Loan>()
                 .HasOne(l => l.Loaner)
@@ -42,5 +44,6 @@ namespace LibraryBook.Areas.Data
 
             base.OnModelCreating(modelBuilder);
         }
+        public DbSet<LibraryBook.ApiModels.LoginModel> LoginModel { get; set; } = default!;
     }
 }

@@ -19,21 +19,24 @@ namespace LibraryBook.Controllers
             _context = context;
         }
 
-        // GET: Books
+
         // GET: Books
         public async Task<IActionResult> Index(string searchField)
         {
-            var booksQuery = from b in _context.Books
-                             orderby b.Title
-                             select b;
+            var books = from b in _context.Books
+                        orderby b.Title
+                        select b;
 
             if (!string.IsNullOrEmpty(searchField))
             {
-                booksQuery = (IOrderedQueryable<Book>)booksQuery.Where(b => b.Title.Contains(searchField));
+                books = from b in _context.Books
+                        where b.Title.Contains(searchField)
+                        orderby b.Title
+                        select b;
             }
 
-            var books = await booksQuery.Include(b => b.Loaner).ToListAsync();
-            return View(books);
+
+            return View(await books.ToListAsync());
         }
 
 
@@ -59,7 +62,10 @@ namespace LibraryBook.Controllers
         // GET: Books/Create
         public IActionResult Create()
         {
-            ViewData["LoanerUserName"] = new SelectList(_context.Users, "Id", "Id");
+
+            var users = _context.Users.ToList();
+            ViewData["LoanerUserName"] = new SelectList(users, "Id", "UserName");
+
             return View();
         }
 
@@ -68,15 +74,27 @@ namespace LibraryBook.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Author,ISBN,IsLoaned,LoanerUserName")] Book book)
+        public async Task<IActionResult> Create([Bind("Id,Title,Author,ISBN,Loans")] Book book)
         {
             if (ModelState.IsValid)
             {
+                book.IsLoaned = false;
+                book.LibraryUserId = null;
+                book.Loans = new List<Loan>();
+
                 _context.Add(book);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["LoanerUserName"] = new SelectList(_context.Users, "Id", "Id", book.LoanerUserName);
+
+            foreach (var modelState in ViewData.ModelState.Values)
+            {
+                foreach (var error in modelState.Errors)
+                {
+                    Console.WriteLine($"ModelState Error: {error.ErrorMessage}");
+                }
+            }
+            ViewData["LoanerUserName"] = new SelectList(_context.Users, "Id", "UserName", book.LibraryUserId);
             return View(book);
         }
 
@@ -93,7 +111,7 @@ namespace LibraryBook.Controllers
             {
                 return NotFound();
             }
-            ViewData["LoanerUserName"] = new SelectList(_context.Users, "Id", "Id", book.LoanerUserName);
+            ViewData["LoanerUserName"] = new SelectList(_context.Users, "Id", "Id", book.LibraryUserId);
             return View(book);
         }
 
@@ -102,7 +120,7 @@ namespace LibraryBook.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Author,ISBN,IsLoaned,LoanerUserName")] Book book)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Author,ISBN,IsLoaned,LoanerUserName,Loans")] Book book)
         {
             if (id != book.Id)
             {
@@ -129,7 +147,7 @@ namespace LibraryBook.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["LoanerUserName"] = new SelectList(_context.Users, "Id", "Id", book.LoanerUserName);
+            ViewData["LoanerUserName"] = new SelectList(_context.Users, "Id", "Id", book.LibraryUserId);
             return View(book);
         }
 

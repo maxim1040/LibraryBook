@@ -1,12 +1,14 @@
 ﻿@model LibraryBook.Areas.Data.LibraryUser
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer _localizer
 
 @{
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>@_localizer["Aanmaken"]</h1>
 
-<h4>User</h4>
+<h4>@_localizer["Gebruikers"]</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -40,7 +42,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">@_localizer["Terug naar lijst"]</a>
 </div>
 
 @section Scripts {

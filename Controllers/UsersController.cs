@@ -2,23 +2,39 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LibraryBook.Areas.Data;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace LibraryBook.Controllers
 {
     public class UsersController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<LibraryUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public UsersController(ApplicationDbContext context)
+        public UsersController(ApplicationDbContext context, UserManager<LibraryUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             _context = context;
+            _userManager = userManager;
+            _roleManager = roleManager;
         }
 
         // GET: Users
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string roleFilter)
         {
-            return View(await _context.Users.ToListAsync());
+            var users = from u in _context.Users
+                        select u;
+
+            if (!string.IsNullOrEmpty(roleFilter))
+            {
+                users = users.Where(u => u.UserName == roleFilter);
+            }
+
+            return View(await users.ToListAsync());
         }
+
 
         // GET: Users/Details/5
         public async Task<IActionResult> Details(string? id)
@@ -48,7 +64,7 @@ namespace LibraryBook.Controllers
         // POST: Users/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,UserName,Password,Email")] LibraryUser user)
+        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,UserName,Email")] LibraryUser user)
         {
             if (ModelState.IsValid)
             {
@@ -58,8 +74,8 @@ namespace LibraryBook.Controllers
             }
             return View(user);
         }
-
         // GET: Users/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(string? id)
         {
             if (id == null)
@@ -68,10 +84,12 @@ namespace LibraryBook.Controllers
             }
 
             var user = await _context.Users.FindAsync(id);
+
             if (user == null)
             {
                 return NotFound();
             }
+
             return View(user);
         }
 
@@ -107,6 +125,11 @@ namespace LibraryBook.Controllers
             }
             return View(user);
         }
+
+
+
+
+
 
         // GET: Users/Delete/5
         public async Task<IActionResult> Delete(string? id)

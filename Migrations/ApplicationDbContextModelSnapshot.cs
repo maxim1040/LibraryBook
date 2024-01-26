@@ -22,6 +22,27 @@ namespace LibraryBook.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("LibraryBook.ApiModels.LoginModel", b =>
+                {
+                    b.Property<int?>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LoginModel");
+                });
+
             modelBuilder.Entity("LibraryBook.Areas.Data.LibraryUser", b =>
                 {
                     b.Property<string>("Id")
@@ -121,7 +142,7 @@ namespace LibraryBook.Migrations
                     b.Property<bool>("IsLoaned")
                         .HasColumnType("bit");
 
-                    b.Property<string>("LoanerUserName")
+                    b.Property<string>("LibraryUserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Title")
@@ -131,9 +152,30 @@ namespace LibraryBook.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("LoanerUserName");
+                    b.HasIndex("LibraryUserId");
 
                     b.ToTable("Books");
+                });
+
+            modelBuilder.Entity("LibraryBook.Models.Language", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasMaxLength(2)
+                        .HasColumnType("nvarchar(2)");
+
+                    b.Property<DateTime>("IsAvailable")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsSystemLanguage")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Languages");
                 });
 
             modelBuilder.Entity("LibraryBook.Models.Loan", b =>
@@ -145,9 +187,6 @@ namespace LibraryBook.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
 
                     b.Property<int?>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("BooksId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Deleted")
@@ -162,17 +201,12 @@ namespace LibraryBook.Migrations
                     b.Property<DateTime>("ReturnDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("SelectedBookId")
-                        .HasColumnType("int");
-
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("BookId");
-
-                    b.HasIndex("BooksId");
 
                     b.HasIndex("LoanerId");
 
@@ -355,7 +389,7 @@ namespace LibraryBook.Migrations
                 {
                     b.HasOne("LibraryBook.Areas.Data.LibraryUser", "Loaner")
                         .WithMany()
-                        .HasForeignKey("LoanerUserName");
+                        .HasForeignKey("LibraryUserId");
 
                     b.Navigation("Loaner");
                 });
@@ -364,11 +398,8 @@ namespace LibraryBook.Migrations
                 {
                     b.HasOne("LibraryBook.Models.Book", "Book")
                         .WithMany("Loans")
-                        .HasForeignKey("BookId");
-
-                    b.HasOne("LibraryBook.Models.Book", "Books")
-                        .WithMany()
-                        .HasForeignKey("BooksId");
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("LibraryBook.Areas.Data.LibraryUser", "Loaner")
                         .WithMany("Loans")
@@ -380,8 +411,6 @@ namespace LibraryBook.Migrations
                         .HasForeignKey("UserId");
 
                     b.Navigation("Book");
-
-                    b.Navigation("Books");
 
                     b.Navigation("Loaner");
                 });

@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<LibraryBook.Models.Loan>
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer _localizer
 
 @{
     ViewData["Title"] = "Index";
@@ -7,7 +9,7 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">@_localizer["Nieuw aanmaken"]</a>
 </p>
 
 
@@ -24,7 +26,7 @@
                 @Html.DisplayNameFor(model => model.Deleted)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Books)
+                @Html.DisplayNameFor(model => model.Book)
             </th>
             <th></th>
         </tr>
@@ -42,12 +44,12 @@
                 @Html.DisplayFor(modelItem => item.Deleted)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Books.Author)
+                @Html.DisplayFor(modelItem => item.Book.Author)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">@_localizer["Wijzigen"]</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">@_localizer["Details"]</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">@_localizer["Verwijderen"]</a>
             </td>
         </tr>
 }

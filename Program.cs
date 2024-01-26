@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using LibraryBook.Services;
 using NETCore.MailKit.Infrastructure.Internal;
 using LibraryBook.Services;
+using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Mvc.Razor;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<LibraryBook.Areas.Data.ApplicationDbContext>(options =>
@@ -24,6 +26,27 @@ builder.Services.AddDefaultIdentity<LibraryUser>(options => options.SignIn.Requi
     .AddDefaultTokenProviders();
 builder.Services.AddControllersWithViews();
 
+// Add services for RESTFull API
+builder.Services.AddControllers();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1",
+                    new OpenApiInfo { Title = "GroupSpace2023", Version = "v1" });
+});
+
+builder.Services.AddAuthorization(options =>
+{
+        options.AddPolicy("CreateLoanPolicy", policy =>
+        policy.RequireRole("User", "Admin"));
+        
+});
+
+builder.Services.AddLocalization(options => options.ResourcesPath = "Translations");
+builder.Services.AddMvc()
+        .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+        .AddDataAnnotationsLocalization();
+
+
 ///Email confirmation
 /**builder.Services.AddTransient<IEmailSender, MailKitEmailSender>();
 builder.Services.Configure<MailKitOptions>(options =>
@@ -37,24 +60,26 @@ builder.Services.Configure<MailKitOptions>(options =>
     // Set it to TRUE to enable ssl or tls, FALSE otherwise
     options.Security = false;
 }); **/
-
-
-
 var app = builder.Build();
 
+var supportedCultures = new[] { "en", "fr", "nl" };
+var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(supportedCultures[0])
+       .AddSupportedCultures(supportedCultures)
+       .AddSupportedUICultures(supportedCultures);
+app.UseRequestLocalization(localizationOptions);
+
+
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseMigrationsEndPoint();
-}
-else
+if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
 }
-
-app.UseHttpsRedirection();
+else // Gebruik van RESTFull API tijdens ontwikkeling
+{
+    app.UseDeveloperExceptionPage();
+    app.UseSwagger();
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "GroupSpace2023 v1"));
+}
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -72,5 +97,7 @@ using (var scope = app.Services.CreateScope())
     var userManager = services.GetRequiredService<UserManager<LibraryUser>>();
     await SeedDatacontext.Initialize(services, userManager);
 }
+
+app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 
 app.Run();

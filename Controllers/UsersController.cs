@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using LibraryBook.Areas.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Linq;
 
 namespace LibraryBook.Controllers
 {
@@ -24,17 +24,36 @@ namespace LibraryBook.Controllers
         // GET: Users
         public async Task<IActionResult> Index(string roleFilter)
         {
-            var users = from u in _context.Users
-                        select u;
+            // Retrieve the Users table from HttpContext.Items using middleware
+            var usersTable = HttpContext.Items["UsersTable"] as IQueryable<LibraryUser>;
 
+            // Default to all users if usersTable is null (in case middleware is not working)
+            var users = usersTable ?? _context.Users.AsQueryable();
+
+            // Populate roles for the filter dropdown
+            ViewBag.Roles = await _roleManager.Roles.Select(r => r.Name).ToListAsync();
+
+            // Set the current filter in ViewBag to maintain the selected role in the view
+            ViewBag.CurrentFilter = roleFilter;
+
+            // Filter by role if a role is selected
             if (!string.IsNullOrEmpty(roleFilter))
             {
-                users = users.Where(u => u.UserName == roleFilter);
+                var roleIds = await _roleManager.Roles
+                    .Where(r => r.Name == roleFilter)
+                    .Select(r => r.Id)
+                    .ToListAsync();
+
+                var userIdsInRole = await _context.UserRoles
+                    .Where(ur => roleIds.Contains(ur.RoleId))
+                    .Select(ur => ur.UserId)
+                    .ToListAsync();
+
+                users = users.Where(u => userIdsInRole.Contains(u.Id));
             }
 
             return View(await users.ToListAsync());
         }
-
 
         // GET: Users/Details/5
         public async Task<IActionResult> Details(string? id)
@@ -74,6 +93,7 @@ namespace LibraryBook.Controllers
             }
             return View(user);
         }
+
         // GET: Users/Edit/5
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(string? id)
@@ -125,11 +145,6 @@ namespace LibraryBook.Controllers
             }
             return View(user);
         }
-
-
-
-
-
 
         // GET: Users/Delete/5
         public async Task<IActionResult> Delete(string? id)

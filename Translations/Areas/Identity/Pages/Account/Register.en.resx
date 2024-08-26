@@ -117,25 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Aanmaken" xml:space="preserve">
-    <value>Create</value>
+  <data name="Achternaam" xml:space="preserve">
+    <value>Last name</value>
   </data>
-  <data name="Details" xml:space="preserve">
-    <value>Details</value>
+  <data name="artikel over het inrichten van deze ASP.NET applicatie ter ondersteuning van het inloggen via externe diensten" xml:space="preserve">
+    <value>article about setting up this ASP.NET application to support logging in via external services</value>
   </data>
-  <data name="Lenen" xml:space="preserve">
-    <value>Loan</value>
+  <data name="Bevestig wachtwoord" xml:space="preserve">
+    <value>Confirm Password</value>
   </data>
-  <data name="Stop Lening" xml:space="preserve">
-    <value>Stop Loan</value>
+  <data name="E-mail" xml:space="preserve">
+    <value>Email</value>
   </data>
-  <data name="Verwijderen" xml:space="preserve">
-    <value>Delete</value>
+  <data name="Er zijn geen externe authenticatieservices geconfigureerd. Zie dit" xml:space="preserve">
+    <value>There are no external authentication services configured. See this</value>
   </data>
-  <data name="Wijzigen" xml:space="preserve">
-    <value>Edit</value>
+  <data name="Gebruikersnaam" xml:space="preserve">
+    <value>Username</value>
   </data>
-  <data name="Zoeken" xml:space="preserve">
-    <value>Search</value>
+  <data name="Maak een nieuw account aan." xml:space="preserve">
+    <value>Create a new account.</value>
+  </data>
+  <data name="Registreer" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Voornaam" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="Wachtwoord" xml:space="preserve">
+    <value>Password</value>
   </data>
 </root>

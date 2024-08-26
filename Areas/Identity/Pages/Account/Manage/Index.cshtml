@@ -1,7 +1,9 @@
 ﻿@page
 @model IndexModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer _localizer
 @{
-    ViewData["Title"] = "Profile";
+    ViewData["Title"] = @_localizer["Profiel"];
     ViewData["ActivePage"] = ManageNavPages.Index;
 }
 
@@ -13,7 +15,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
             <div class="form-floating mb-3">
                 <input asp-for="Username" class="form-control" placeholder="Please choose your username." disabled />
-                <label asp-for="Username" class="form-label"></label>
+                <label asp-for="Username" class="form-label">@_localizer["Gebruikersnaam"]</label>
             </div>
             <div class="form-floating">
                 <input asp-for="Input.FirstName" class="form-control" />

@@ -117,25 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Aanmaken" xml:space="preserve">
-    <value>Create</value>
+  <data name="artikel over het inrichten van deze ASP.NET applicatie ter ondersteuning van het inloggen via externe diensten" xml:space="preserve">
+    <value>article about setting up this ASP.NET application to support logging in via external services</value>
   </data>
-  <data name="Details" xml:space="preserve">
-    <value>Details</value>
+  <data name="E-mailbevestiging opnieuw verzenden" xml:space="preserve">
+    <value>Resend email confirmation</value>
   </data>
-  <data name="Lenen" xml:space="preserve">
-    <value>Loan</value>
+  <data name="Er zijn geen externe authenticatieservices geconfigureerd. Zie dit" xml:space="preserve">
+    <value>There are no external authentication services configured. See this</value>
   </data>
-  <data name="Stop Lening" xml:space="preserve">
-    <value>Stop Loan</value>
+  <data name="Gebruik een andere dienst om in te loggen." xml:space="preserve">
+    <value>Use another service to log in.</value>
   </data>
-  <data name="Verwijderen" xml:space="preserve">
-    <value>Delete</value>
+  <data name="Gebruik een lokaal account om in te loggen." xml:space="preserve">
+    <value>Use a local account to log in.</value>
   </data>
-  <data name="Wijzigen" xml:space="preserve">
-    <value>Edit</value>
+  <data name="Gebruikersnaam" xml:space="preserve">
+    <value>Username</value>
   </data>
-  <data name="Zoeken" xml:space="preserve">
-    <value>Search</value>
+  <data name="Log in" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="Registreer als nieuwe gebruiker" xml:space="preserve">
+    <value>Register as a new user</value>
+  </data>
+  <data name="Wachtwoord" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Wachtwoord vergeten?" xml:space="preserve">
+    <value>Forgot your password?</value>
   </data>
 </root>

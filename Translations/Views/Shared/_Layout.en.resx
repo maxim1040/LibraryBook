@@ -126,6 +126,9 @@
   <data name="Boek" xml:space="preserve">
     <value>Book</value>
   </data>
+  <data name="Boeken" xml:space="preserve">
+    <value>Books</value>
+  </data>
   <data name="Confidentialiteit" xml:space="preserve">
     <value>Privacy</value>
   </data>
@@ -150,11 +153,17 @@
   <data name="Lening" xml:space="preserve">
     <value>Loan</value>
   </data>
+  <data name="Leningen" xml:space="preserve">
+    <value>Loans</value>
+  </data>
   <data name="Log uit" xml:space="preserve">
     <value>Logout</value>
   </data>
   <data name="Nieuw aanmaken" xml:space="preserve">
     <value>Create new</value>
+  </data>
+  <data name="Startpagina" xml:space="preserve">
+    <value>Home</value>
   </data>
   <data name="Talen" xml:space="preserve">
     <value>Languages</value>

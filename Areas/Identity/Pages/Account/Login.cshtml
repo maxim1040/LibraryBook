@@ -1,8 +1,10 @@
 ﻿@page
 @model LoginModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer _localizer
 
 @{
-    ViewData["Title"] = "Log in";
+    ViewData["Title"] = @_localizer["Log in"];
 }
 
 <h1>@ViewData["Title"]</h1>
@@ -10,17 +12,17 @@
     <div class="col-md-4">
         <section>
             <form id="account" method="post">
-                <h2>Use a local account to log in.</h2>
+                <h2>@_localizer["Gebruik een lokaal account om in te loggen."]</h2>
                 <hr />
                 <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
                 <div class="form-floating mb-3">
                     <input asp-for="Input.UserName" class="form-control" autocomplete="username" aria-required="true" placeholder="Username" />
-                    <label asp-for="Input.UserName" class="form-label">Username</label>
+                    <label asp-for="Input.UserName" class="form-label">@_localizer["Gebruikersnaam"]</label>
                     <span asp-validation-for="Input.UserName" class="text-danger"></span>
                 </div>
                 <div class="form-floating mb-3">
                     <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
-                    <label asp-for="Input.Password" class="form-label">Password</label>
+                    <label asp-for="Input.Password" class="form-label">@_localizer["Wachtwoord"]</label>
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                 </div>
                 <div class="checkbox mb-3">
@@ -30,17 +32,17 @@
                     </label>
                 </div>
                 <div>
-                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">@_localizer["Log in"]</button>
                 </div>
                 <div>
                     <p>
-                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                        <a id="forgot-password" asp-page="./ForgotPassword">@_localizer["Wachtwoord vergeten?"]</a>
                     </p>
                     <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">@_localizer["Registreer als nieuwe gebruiker"]</a>
                     </p>
                     <p>
-                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
+                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">@_localizer["E-mailbevestiging opnieuw verzenden"]</a>
                     </p>
                 </div>
             </form>
@@ -48,15 +50,16 @@
     </div>
     <div class="col-md-6 col-md-offset-2">
         <section>
-            <h3>Use another service to log in.</h3>
+            <h3>@_localizer["Gebruik een andere dienst om in te loggen."]</h3>
             <hr />
             @{
                 if ((Model.ExternalLogins?.Count ?? 0) == 0)
                 {
                     <div>
                         <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
+                            @_localizer["Er zijn geen externe authenticatieservices geconfigureerd. Zie dit"]<a href="https://go.microsoft.com/fwlink/?LinkID=532715">
+                            @_localizer["artikel over het inrichten van deze ASP.NET applicatie ter ondersteuning van het inloggen via externe diensten"]
+                            </a>.
                         </p>
                     </div>
                 }

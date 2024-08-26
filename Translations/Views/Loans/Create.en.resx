@@ -126,6 +126,12 @@
   <data name="Boek" xml:space="preserve">
     <value>Book</value>
   </data>
+  <data name="Datum begin lening" xml:space="preserve">
+    <value>Date start of loan</value>
+  </data>
+  <data name="Datum einde lening" xml:space="preserve">
+    <value>Date end of loan</value>
+  </data>
   <data name="Details" xml:space="preserve">
     <value>Details</value>
   </data>

@@ -117,25 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Aanmaken" xml:space="preserve">
-    <value>Create</value>
+  <data name="Er is een onverwachte fout opgetreden. Probeer het later opnieuw." xml:space="preserve">
+    <value>An unexpected error occurred. Please try again later.</value>
   </data>
-  <data name="Details" xml:space="preserve">
-    <value>Details</value>
+  <data name="Ga terug naar home pagina" xml:space="preserve">
+    <value>Go Back to Home</value>
   </data>
-  <data name="Lenen" xml:space="preserve">
-    <value>Loan</value>
-  </data>
-  <data name="Stop Lening" xml:space="preserve">
-    <value>Stop Loan</value>
-  </data>
-  <data name="Verwijderen" xml:space="preserve">
-    <value>Delete</value>
-  </data>
-  <data name="Wijzigen" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="Zoeken" xml:space="preserve">
-    <value>Search</value>
+  <data name="Sorry, de pagina die u zoekt, kon niet worden gevonden." xml:space="preserve">
+    <value>Sorry, the page you are looking for could not be found.</value>
   </data>
 </root>

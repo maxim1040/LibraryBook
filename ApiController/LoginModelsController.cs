@@ -73,6 +73,29 @@ namespace LibraryBook.ApiController
             return NoContent();
         }
 
+        // LOGIN
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginModel loginModel)
+        {
+            // Find the user by username
+            var user = await _context.LoginModel.FirstOrDefaultAsync(u => u.Name == loginModel.Name);
+            if (user == null)
+            {
+                return Unauthorized("Invalid username or password");
+            }
+
+            // Check the password (you should hash passwords in a real application)
+            if (user.Password != loginModel.Password)
+            {
+                return Unauthorized("Invalid username or password");
+            }
+
+            // If you want to issue a JWT token, you would do so here and return it
+            // For this example, we'll just return a success message
+            return Ok("Login successful");
+        }
+
+
         // POST: api/LoginModels
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]

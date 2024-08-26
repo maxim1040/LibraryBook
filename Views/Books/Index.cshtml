@@ -7,11 +7,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Books Index</h1>
 
+@if (User.IsInRole("User"))
+{
 <p>
     <a asp-action="Create">@_localizer["Aanmaken"]</a>
 </p>
+}
 <p>
     <form asp-action="Index" asp-controller="Books" method="get">
         @_localizer["Zoeken"]
@@ -35,30 +38,30 @@
                 @Html.DisplayNameFor(model => model.IsLoaned)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Loaner)
+                @Html.DisplayNameFor(model => model.Loaner.UserName)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ISBN)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsLoaned)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Loaner.UserName)
-            </td>
-                @if (User.IsInRole("User"))
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                <td>@Html.DisplayFor(modelItem => item.Author)</td>
+                <td>@Html.DisplayFor(modelItem => item.ISBN)</td>
+                <td>@Html.DisplayFor(modelItem => item.IsLoaned)</td>
+                <td>@(item.Loaner?.UserName ?? "-")</td>
+                <td>
+                    @if (User.Identity.IsAuthenticated && User.Identity.Name == item.Loaner?.UserName && item.IsLoaned || User.IsInRole("Admin") && item.IsLoaned)
+                    {
+                        <form asp-action="StopLoan" asp-controller="Books" method="post">
+                            <input type="hidden" name="id" value="@item.Id" />
+                            <button type="submit" class="btn btn-danger">@_localizer["Stop Lening"]</button>
+                        </form>
+                    }
+                </td>
+                @if (User.Identity.IsAuthenticated)
                 {
                     @if (!item.IsLoaned)
                     {
@@ -67,7 +70,8 @@
                         </td>
                     }
                 }
-                else if (User.IsInRole("Admin"))
+
+                @if (User.IsInRole("Admin"))
                 {
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.Id">@_localizer["Wijzigen"]</a> |
@@ -75,8 +79,7 @@
                         <a asp-action="Delete" asp-route-id="@item.Id">@_localizer["Verwijderen"]</a>
                     </td>
                 }
-
-        </tr>
-}
+            </tr>
+        }
     </tbody>
 </table>

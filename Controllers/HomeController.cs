@@ -27,11 +27,18 @@ namespace LibraryBook.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Error(int? code = null)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            // Retrieve error details from the context
+            var errorMessage = HttpContext.Items["ErrorMessage"] as string;
+            var statusCode = code ?? 500;
+
+            ViewData["ErrorMessage"] = errorMessage;
+            ViewData["StatusCode"] = statusCode;
+
+            return View();
         }
+
 
         public IActionResult ChangeLanguage(string id, string returnUrl)
         {

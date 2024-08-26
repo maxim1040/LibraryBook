@@ -24,13 +24,18 @@ namespace LibraryBook.Controllers
             _userManager = userManager;
         }
 
+
         // GET: Loans
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index(string titleFilter, int selectedGroup)
         {
-            var libraryBookContext = _context.Loans.Include(l => l.Book);
+            var libraryBookContext = _context.Loans
+                .Include(l => l.Book)
+                .Include(l => l.Loaner); // Include the Loaner (LibraryUser)
+
             return View(await libraryBookContext.ToListAsync());
         }
+
 
         // GET: Loans/Details/5
         [Authorize(Roles = "Admin")]
@@ -61,8 +66,6 @@ namespace LibraryBook.Controllers
         }
 
         // POST: Loans/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [Authorize(Policy = "CreateLoanPolicy")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -70,19 +73,23 @@ namespace LibraryBook.Controllers
         {
             if (ModelState.IsValid)
             {
+                var user = await _userManager.GetUserAsync(User);
+                loan.LoanerId = user?.Id;
+                loan.UserId = user?.Id;
 
                 // Set IsLoaned status of the book to true
                 var book = await _context.Books.FindAsync(loan.BookId);
                 if (book != null)
                 {
                     book.IsLoaned = true;
-                    book.Loaner = await _userManager.GetUserAsync(User);
+                    book.Loaner = user;
                     _context.Update(book);
                 }
                 _context.Add(loan);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index","Books");
+                return RedirectToAction("Index", "Books");
             }
+
             foreach (var modelState in ViewData.ModelState.Values)
             {
                 foreach (var error in modelState.Errors)

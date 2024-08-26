@@ -31,10 +31,15 @@ namespace LibraryBook.Models
         public string? LoanerId { get; set; }
         public LibraryUser? Loaner { get; set; }
 
+        [ForeignKey("User")]
+        public string? UserId { get; set; }
+        public LibraryUser? User { get; set; }
+
         [Display(Name = "Titel van de boek")]
         public string? BookTitle => Book?.Title;
 
         [Display(Name = "Gebruikersnaam")]
         public string? LoanerUsername => Loaner?.UserName;
     }
+
 }

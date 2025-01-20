@@ -69,6 +69,8 @@ var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(sup
 app.UseRequestLocalization(localizationOptions);
 
 
+//Just a line to test the ci/cd
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

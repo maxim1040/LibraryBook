@@ -71,6 +71,7 @@ app.UseRequestLocalization(localizationOptions);
 
 //Just a line to test the ci/cd
 //Just a line to test the ci/cd 2
+//Just a line to test the ci/cd 3
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

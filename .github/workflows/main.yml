@@ -13,6 +13,14 @@ jobs:
   dotnet-build:
     runs-on: ubuntu-latest
 
+
+    services:
+      mysql:
+        image: mysql:8.2.0
+        ports:
+          - 3306:3306
+
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4

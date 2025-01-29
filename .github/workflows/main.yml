@@ -15,11 +15,13 @@ jobs:
 
 
     services:
-      mysql:
-        image: mysql:8.2.0
+      sqlserver:
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        env:
+          ACCEPT_EULA: "Y"
+          SA_PASSWORD: "Test123."
         ports:
-          - 3306:3306
-
+          - 1433:1433
 
     steps:
       - name: Checkout code
@@ -32,6 +34,12 @@ jobs:
 
       - name: Restore dependencies
         run: dotnet restore
+
+      - name: Initialize SQL Server Database
+        run: |
+          docker exec sqlserver /opt/mssql-tools/bin/sqlcmd \
+          -S localhost -U sa -P "Test123." \
+          -Q "CREATE DATABASE LibraryBook;"
 
       - name: Build
         run: dotnet build --no-restore --configuration Release

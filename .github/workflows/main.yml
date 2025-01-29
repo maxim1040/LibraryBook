@@ -13,7 +13,6 @@ jobs:
   dotnet-build:
     runs-on: ubuntu-latest
 
-
     services:
       sqlserver:
         image: mcr.microsoft.com/mssql/server:2022-latest
@@ -34,6 +33,10 @@ jobs:
 
       - name: Restore dependencies
         run: dotnet restore
+
+      - name: Wait for SQL Server to start
+        run: |
+          sleep 30  # Wait for SQL Server to fully start
 
       - name: Initialize SQL Server Database
         run: |

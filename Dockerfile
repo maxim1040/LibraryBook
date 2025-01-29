@@ -12,9 +12,8 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["LibraryBook/LibraryBook.csproj", "./LibraryBook/"]
-WORKDIR /src/LibraryBook
-RUN dotnet restore
+COPY ["LibraryBook.csproj", "."]
+RUN dotnet restore "./LibraryBook.csproj"
 COPY . .
 WORKDIR "/src/."
 RUN dotnet build "./LibraryBook.csproj" -c Release -o /app/build

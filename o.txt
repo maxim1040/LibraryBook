@@ -1,0 +1,486 @@
+Structure du dossier
+Le num‚ro de s‚rie du volume est 2CDB-C9E6
+C:.
+³   .dockerignore
+³   .gitattributes
+³   .gitignore
+³   appsettings.Development.json
+³   appsettings.json
+³   Dockerfile
+³   LibraryBook.csproj
+³   LibraryBook.csproj.user
+³   LibraryBook.sln
+³   o.txt
+³   Program.cs
+³   
+ÃÄÄÄ.github
+³   ÀÄÄÄworkflows
+³           main.yml
+³           
+ÃÄÄÄApiController
+³       LoginModelsController.cs
+³       
+ÃÄÄÄApiModels
+³       Login.cs
+³       
+ÃÄÄÄAreas
+³   ÃÄÄÄData
+³   ³       ApplicationDbContext.cs
+³   ³       LibraryUser.cs
+³   ³       
+³   ÀÄÄÄIdentity
+³       ÀÄÄÄPages
+³           ³   _ValidationScriptsPartial.cshtml
+³           ³   _ViewImports.cshtml
+³           ³   _ViewStart.cshtml
+³           ³   
+³           ÀÄÄÄAccount
+³               ³   Login.cshtml
+³               ³   Login.cshtml.cs
+³               ³   Register.cshtml
+³               ³   Register.cshtml.cs
+³               ³   _ViewImports.cshtml
+³               ³   
+³               ÀÄÄÄManage
+³                       Index.cshtml
+³                       Index.cshtml.cs
+³                       ManageNavPages.cs
+³                       _ManageNav.cshtml
+³                       _ViewImports.cshtml
+³                       
+ÃÄÄÄbin
+³   ÃÄÄÄDebug
+³   ³   ÀÄÄÄnet8.0
+³   ³       ÃÄÄÄaf
+³   ³       ÃÄÄÄar
+³   ³       ÃÄÄÄaz
+³   ³       ÃÄÄÄbg
+³   ³       ÃÄÄÄbn-BD
+³   ³       ÃÄÄÄcs
+³   ³       ÃÄÄÄda
+³   ³       ÃÄÄÄde
+³   ³       ÃÄÄÄel
+³   ³       ÃÄÄÄen
+³   ³       ÃÄÄÄes
+³   ³       ÃÄÄÄfa
+³   ³       ÃÄÄÄfi-FI
+³   ³       ÃÄÄÄfr
+³   ³       ÃÄÄÄfr-BE
+³   ³       ÃÄÄÄhe
+³   ³       ÃÄÄÄhr
+³   ³       ÃÄÄÄhu
+³   ³       ÃÄÄÄhy
+³   ³       ÃÄÄÄid
+³   ³       ÃÄÄÄis
+³   ³       ÃÄÄÄit
+³   ³       ÃÄÄÄja
+³   ³       ÃÄÄÄko
+³   ³       ÃÄÄÄko-KR
+³   ³       ÃÄÄÄku
+³   ³       ÃÄÄÄlv
+³   ³       ÃÄÄÄms-MY
+³   ³       ÃÄÄÄmt
+³   ³       ÃÄÄÄnb
+³   ³       ÃÄÄÄnb-NO
+³   ³       ÃÄÄÄnl
+³   ³       ÃÄÄÄpl
+³   ³       ÃÄÄÄpt
+³   ³       ÃÄÄÄpt-BR
+³   ³       ÃÄÄÄro
+³   ³       ÃÄÄÄru
+³   ³       ÃÄÄÄruntimes
+³   ³       ³   ÃÄÄÄbrowser-wasm
+³   ³       ³   ³   ÀÄÄÄnativeassets
+³   ³       ³   ³       ÀÄÄÄnet8.0
+³   ³       ³   ÃÄÄÄlinux-arm
+³   ³       ³   ³   ÀÄÄÄnative
+³   ³       ³   ÃÄÄÄlinux-arm64
+³   ³       ³   ³   ÀÄÄÄnative
+³   ³       ³   ÃÄÄÄlinux-armel
+³   ³       ³   ³   ÀÄÄÄnative
+³   ³       ³   ÃÄÄÄlinux-mips64
+³   ³       ³   ³   ÀÄÄÄnative
+³   ³       ³   ÃÄÄÄlinux-musl-arm
+³   ³       ³   ³   ÀÄÄÄnative
+³   ³       ³   ÃÄÄÄlinux-musl-arm64
+³   ³       ³   ³   ÀÄÄÄnative
+³   ³       ³   ÃÄÄÄlinux-musl-x64
+³   ³       ³   ³   ÀÄÄÄnative
+³   ³       ³   ÃÄÄÄlinux-ppc64le
+³   ³       ³   ³   ÀÄÄÄnative
+³   ³       ³   ÃÄÄÄlinux-s390x
+³   ³       ³   ³   ÀÄÄÄnative
+³   ³       ³   ÃÄÄÄlinux-x64
+³   ³       ³   ³   ÀÄÄÄnative
+³   ³       ³   ÃÄÄÄlinux-x86
+³   ³       ³   ³   ÀÄÄÄnative
+³   ³       ³   ÃÄÄÄmaccatalyst-arm64
+³   ³       ³   ³   ÀÄÄÄnative
+³   ³       ³   ÃÄÄÄmaccatalyst-x64
+³   ³       ³   ³   ÀÄÄÄnative
+³   ³       ³   ÃÄÄÄosx-arm64
+³   ³       ³   ³   ÀÄÄÄnative
+³   ³       ³   ÃÄÄÄosx-x64
+³   ³       ³   ³   ÀÄÄÄnative
+³   ³       ³   ÃÄÄÄunix
+³   ³       ³   ³   ÀÄÄÄlib
+³   ³       ³   ³       ÀÄÄÄnet6.0
+³   ³       ³   ÃÄÄÄwin
+³   ³       ³   ³   ÀÄÄÄlib
+³   ³       ³   ³       ÃÄÄÄnet6.0
+³   ³       ³   ³       ÀÄÄÄnet7.0
+³   ³       ³   ÃÄÄÄwin-arm
+³   ³       ³   ³   ÀÄÄÄnative
+³   ³       ³   ÃÄÄÄwin-arm64
+³   ³       ³   ³   ÀÄÄÄnative
+³   ³       ³   ÃÄÄÄwin-x64
+³   ³       ³   ³   ÀÄÄÄnative
+³   ³       ³   ÀÄÄÄwin-x86
+³   ³       ³       ÀÄÄÄnative
+³   ³       ÃÄÄÄsk
+³   ³       ÃÄÄÄsl
+³   ³       ÃÄÄÄsr
+³   ³       ÃÄÄÄsr-Latn
+³   ³       ÃÄÄÄsv
+³   ³       ÃÄÄÄth-TH
+³   ³       ÃÄÄÄtr
+³   ³       ÃÄÄÄuk
+³   ³       ÃÄÄÄuz-Cyrl-UZ
+³   ³       ÃÄÄÄuz-Latn-UZ
+³   ³       ÃÄÄÄvi
+³   ³       ÃÄÄÄzh-CN
+³   ³       ÃÄÄÄzh-Hans
+³   ³       ÀÄÄÄzh-Hant
+³   ÀÄÄÄRelease
+³       ÀÄÄÄnet8.0
+ÃÄÄÄControllers
+³       BooksController.cs
+³       HomeController.cs
+³       LanguagesController.cs
+³       LoansController.cs
+³       UsersController.cs
+³       
+ÃÄÄÄData
+³       SeedDatacontext.cs
+³       
+ÃÄÄÄMigrations
+³       20240126221541_InitialCreate.cs
+³       20240126221541_InitialCreate.Designer.cs
+³       ApplicationDbContextModelSnapshot.cs
+³       
+ÃÄÄÄModels
+³       Book.cs
+³       ErrorViewModel.cs
+³       Language.cs
+³       Loan.cs
+³       User.cs
+³       
+ÃÄÄÄobj
+³   ³   LibraryBook.csproj.EntityFrameworkCore.targets
+³   ³   LibraryBook.csproj.nuget.dgspec.json
+³   ³   LibraryBook.csproj.nuget.g.props
+³   ³   LibraryBook.csproj.nuget.g.targets
+³   ³   project.assets.json
+³   ³   project.nuget.cache
+³   ³   
+³   ÃÄÄÄContainer
+³   ³       AbsoluteOutputAssemblyPath.cache
+³   ³       AdditionalProbingPaths.cache
+³   ³       ContainerDevelopmentMode.cache
+³   ³       ContainerId.cache
+³   ³       ContainerName.cache
+³   ³       ContainerOperatingSystemFlavor.cache
+³   ³       ContainerRunContext.cache
+³   ³       DebuggeeArguments.cache
+³   ³       DebuggeeKillProcessCommand.cache
+³   ³       DebuggeeProgram.cache
+³   ³       DebuggeeWorkingDirectory.cache
+³   ³       DistrolessHelperSupported.cache
+³   ³       FastModeProjectMountDirectory.cache
+³   ³       ImageBuildContext.cache
+³   ³       ImageId.cache
+³   ³       LaunchedImageId.cache
+³   ³       OperatingSystemName.cache
+³   ³       TargetFramework.cache
+³   ³       VolumeMappings.cache
+³   ³       VolumeMappings2.cache
+³   ³       VsDbgScript.cache
+³   ³       
+³   ÃÄÄÄDebug
+³   ³   ÀÄÄÄnet8.0
+³   ³       ³   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+³   ³       ³   apphost.exe
+³   ³       ³   LibraryBook.AssemblyInfo.cs
+³   ³       ³   LibraryBook.AssemblyInfoInputs.cache
+³   ³       ³   LibraryBook.assets.cache
+³   ³       ³   LibraryBook.csproj.AssemblyReference.cache
+³   ³       ³   LibraryBook.csproj.CoreCompileInputs.cache
+³   ³       ³   LibraryBook.csproj.FileListAbsolute.txt
+³   ³       ³   LibraryBook.csproj.GenerateResource.cache
+³   ³       ³   LibraryBook.GeneratedMSBuildEditorConfig.editorconfig
+³   ³       ³   LibraryBook.GlobalUsings.g.cs
+³   ³       ³   LibraryBook.MvcApplicationPartsAssemblyInfo.cache
+³   ³       ³   LibraryBook.MvcApplicationPartsAssemblyInfo.cs
+³   ³       ³   LibraryBook.RazorAssemblyInfo.cache
+³   ³       ³   LibraryBook.RazorAssemblyInfo.cs
+³   ³       ³   LibraryBook.sourcelink.json
+³   ³       ³   LibraryBook.Translations.Areas.Data.LibraryUser.resources
+³   ³       ³   LibraryBook.Translations.Models.Book.en.resources
+³   ³       ³   LibraryBook.Translations.Models.Language.en.resources
+³   ³       ³   LibraryBook.Translations.Models.Loans.en.resources
+³   ³       ³   LibraryBook.Translations.Models.User.en.resources
+³   ³       ³   LibraryBook.Translations.Views.Books.Create.en.resources
+³   ³       ³   LibraryBook.Translations.Views.Books.Delete.en.resources
+³   ³       ³   LibraryBook.Translations.Views.Books.Details.en.resources
+³   ³       ³   LibraryBook.Translations.Views.Books.Edit.en.resources
+³   ³       ³   LibraryBook.Translations.Views.Books.Index.en.resources
+³   ³       ³   LibraryBook.Translations.Views.Home.Index.en.resources
+³   ³       ³   LibraryBook.Translations.Views.Home.Privacy.en.resources
+³   ³       ³   LibraryBook.Translations.Views.Loans.Create.en.resources
+³   ³       ³   LibraryBook.Translations.Views.Loans.Delete.en.resources
+³   ³       ³   LibraryBook.Translations.Views.Loans.Details.en.resources
+³   ³       ³   LibraryBook.Translations.Views.Loans.Edit.en.resources
+³   ³       ³   LibraryBook.Translations.Views.Loans.Index.en.resources
+³   ³       ³   LibraryBook.Translations.Views.Shared._LanguagePartial.en.resources
+³   ³       ³   LibraryBook.Translations.Views.Shared._Layout.en.resources
+³   ³       ³   LibraryBook.Translations.Views.Shared._LoginPartial.en.resources
+³   ³       ³   LibraryBook.Translations.Views.Users.Create.en.resources
+³   ³       ³   LibraryBook.Translations.Views.Users.Delete.en.resources
+³   ³       ³   LibraryBook.Translations.Views.Users.Details.en.resources
+³   ³       ³   LibraryBook.Translations.Views.Users.Edit.en.resources
+³   ³       ³   LibraryBook.Translations.Views.Users.Index.en.resources
+³   ³       ³   staticwebassets.removed.txt
+³   ³       ³   
+³   ³       ÃÄÄÄen
+³   ³       ÃÄÄÄref
+³   ³       ÃÄÄÄrefint
+³   ³       ÃÄÄÄscopedcss
+³   ³       ³   ÃÄÄÄbundle
+³   ³       ³   ÃÄÄÄprojectbundle
+³   ³       ³   ÀÄÄÄViews
+³   ³       ³       ÀÄÄÄShared
+³   ³       ÀÄÄÄstaticwebassets
+³   ÀÄÄÄRelease
+³       ÀÄÄÄnet8.0
+³           ³   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+³           ³   LibraryBook.AssemblyInfo.cs
+³           ³   LibraryBook.AssemblyInfoInputs.cache
+³           ³   LibraryBook.assets.cache
+³           ³   LibraryBook.csproj.AssemblyReference.cache
+³           ³   LibraryBook.csproj.CoreCompileInputs.cache
+³           ³   LibraryBook.csproj.FileListAbsolute.txt
+³           ³   LibraryBook.csproj.GenerateResource.cache
+³           ³   LibraryBook.GeneratedMSBuildEditorConfig.editorconfig
+³           ³   LibraryBook.GlobalUsings.g.cs
+³           ³   LibraryBook.MvcApplicationPartsAssemblyInfo.cache
+³           ³   LibraryBook.MvcApplicationPartsAssemblyInfo.cs
+³           ³   LibraryBook.RazorAssemblyInfo.cache
+³           ³   LibraryBook.RazorAssemblyInfo.cs
+³           ³   LibraryBook.sourcelink.json
+³           ³   LibraryBook.Translations.Areas.Data.LibraryUser.resources
+³           ³   LibraryBook.Translations.Models.Book.en.resources
+³           ³   LibraryBook.Translations.Models.Language.en.resources
+³           ³   LibraryBook.Translations.Models.Loans.en.resources
+³           ³   LibraryBook.Translations.Models.User.en.resources
+³           ³   LibraryBook.Translations.Views.Books.Create.en.resources
+³           ³   LibraryBook.Translations.Views.Books.Delete.en.resources
+³           ³   LibraryBook.Translations.Views.Books.Details.en.resources
+³           ³   LibraryBook.Translations.Views.Books.Edit.en.resources
+³           ³   LibraryBook.Translations.Views.Books.Index.en.resources
+³           ³   LibraryBook.Translations.Views.Home.Index.en.resources
+³           ³   LibraryBook.Translations.Views.Home.Privacy.en.resources
+³           ³   LibraryBook.Translations.Views.Loans.Create.en.resources
+³           ³   LibraryBook.Translations.Views.Loans.Delete.en.resources
+³           ³   LibraryBook.Translations.Views.Loans.Details.en.resources
+³           ³   LibraryBook.Translations.Views.Loans.Edit.en.resources
+³           ³   LibraryBook.Translations.Views.Loans.Index.en.resources
+³           ³   LibraryBook.Translations.Views.Shared._LanguagePartial.en.resources
+³           ³   LibraryBook.Translations.Views.Shared._Layout.en.resources
+³           ³   LibraryBook.Translations.Views.Shared._LoginPartial.en.resources
+³           ³   LibraryBook.Translations.Views.Users.Create.en.resources
+³           ³   LibraryBook.Translations.Views.Users.Delete.en.resources
+³           ³   LibraryBook.Translations.Views.Users.Details.en.resources
+³           ³   LibraryBook.Translations.Views.Users.Edit.en.resources
+³           ³   LibraryBook.Translations.Views.Users.Index.en.resources
+³           ³   
+³           ÃÄÄÄref
+³           ÃÄÄÄrefint
+³           ÀÄÄÄstaticwebassets
+ÃÄÄÄProperties
+³       launchSettings.json
+³       serviceDependencies.json
+³       serviceDependencies.local.json
+³       
+ÃÄÄÄServices
+³       MailKitEmailSender.cs
+³       
+ÃÄÄÄTranslations
+³   ÃÄÄÄAreas
+³   ³   ÀÄÄÄData
+³   ³           LibraryUser.resx
+³   ³           
+³   ÃÄÄÄModels
+³   ³       Book.en.resx
+³   ³       Language.en.resx
+³   ³       Loans.en.resx
+³   ³       User.en.resx
+³   ³       
+³   ÀÄÄÄViews
+³       ÃÄÄÄBooks
+³       ³       Create.en.resx
+³       ³       Delete.en.resx
+³       ³       Details.en.resx
+³       ³       Edit.en.resx
+³       ³       Index.en.resx
+³       ³       
+³       ÃÄÄÄHome
+³       ³       Index.en.resx
+³       ³       Privacy.en.resx
+³       ³       
+³       ÃÄÄÄLoans
+³       ³       Create.en.resx
+³       ³       Delete.en.resx
+³       ³       Details.en.resx
+³       ³       Edit.en.resx
+³       ³       Index.en.resx
+³       ³       
+³       ÃÄÄÄShared
+³       ³       _LanguagePartial.en.resx
+³       ³       _Layout.en.resx
+³       ³       _LoginPartial.en.resx
+³       ³       
+³       ÀÄÄÄUsers
+³               Create.en.resx
+³               Delete.en.resx
+³               Details.en.resx
+³               Edit.en.resx
+³               Index.en.resx
+³               
+ÃÄÄÄViews
+³   ³   _ViewImports.cshtml
+³   ³   _ViewStart.cshtml
+³   ³   
+³   ÃÄÄÄBooks
+³   ³       Create.cshtml
+³   ³       Delete.cshtml
+³   ³       Details.cshtml
+³   ³       Edit.cshtml
+³   ³       Index.cshtml
+³   ³       
+³   ÃÄÄÄHome
+³   ³       Index.cshtml
+³   ³       Privacy.cshtml
+³   ³       
+³   ÃÄÄÄLanguages
+³   ³       Create.cshtml
+³   ³       Delete.cshtml
+³   ³       Details.cshtml
+³   ³       Edit.cshtml
+³   ³       Index.cshtml
+³   ³       
+³   ÃÄÄÄLoans
+³   ³       Create.cshtml
+³   ³       Delete.cshtml
+³   ³       Details.cshtml
+³   ³       Edit.cshtml
+³   ³       Index.cshtml
+³   ³       
+³   ÃÄÄÄShared
+³   ³       Error.cshtml
+³   ³       _LanguagePartial.cshtml
+³   ³       _Layout.cshtml
+³   ³       _Layout.cshtml.css
+³   ³       _LoginPartial.cshtml
+³   ³       _ValidationScriptsPartial.cshtml
+³   ³       
+³   ÀÄÄÄUsers
+³           Create.cshtml
+³           Delete.cshtml
+³           Details.cshtml
+³           Edit.cshtml
+³           Index.cshtml
+³           
+ÀÄÄÄwwwroot
+    ³   favicon.ico
+    ³   
+    ÃÄÄÄcss
+    ³       site.css
+    ³       
+    ÃÄÄÄjs
+    ³       site.js
+    ³       
+    ÀÄÄÄlib
+        ÃÄÄÄbootstrap
+        ³   ³   LICENSE
+        ³   ³   
+        ³   ÀÄÄÄdist
+        ³       ÃÄÄÄcss
+        ³       ³       bootstrap-grid.css
+        ³       ³       bootstrap-grid.css.map
+        ³       ³       bootstrap-grid.min.css
+        ³       ³       bootstrap-grid.min.css.map
+        ³       ³       bootstrap-grid.rtl.css
+        ³       ³       bootstrap-grid.rtl.css.map
+        ³       ³       bootstrap-grid.rtl.min.css
+        ³       ³       bootstrap-grid.rtl.min.css.map
+        ³       ³       bootstrap-reboot.css
+        ³       ³       bootstrap-reboot.css.map
+        ³       ³       bootstrap-reboot.min.css
+        ³       ³       bootstrap-reboot.min.css.map
+        ³       ³       bootstrap-reboot.rtl.css
+        ³       ³       bootstrap-reboot.rtl.css.map
+        ³       ³       bootstrap-reboot.rtl.min.css
+        ³       ³       bootstrap-reboot.rtl.min.css.map
+        ³       ³       bootstrap-utilities.css
+        ³       ³       bootstrap-utilities.css.map
+        ³       ³       bootstrap-utilities.min.css
+        ³       ³       bootstrap-utilities.min.css.map
+        ³       ³       bootstrap-utilities.rtl.css
+        ³       ³       bootstrap-utilities.rtl.css.map
+        ³       ³       bootstrap-utilities.rtl.min.css
+        ³       ³       bootstrap-utilities.rtl.min.css.map
+        ³       ³       bootstrap.css
+        ³       ³       bootstrap.css.map
+        ³       ³       bootstrap.min.css
+        ³       ³       bootstrap.min.css.map
+        ³       ³       bootstrap.rtl.css
+        ³       ³       bootstrap.rtl.css.map
+        ³       ³       bootstrap.rtl.min.css
+        ³       ³       bootstrap.rtl.min.css.map
+        ³       ³       
+        ³       ÀÄÄÄjs
+        ³               bootstrap.bundle.js
+        ³               bootstrap.bundle.js.map
+        ³               bootstrap.bundle.min.js
+        ³               bootstrap.bundle.min.js.map
+        ³               bootstrap.esm.js
+        ³               bootstrap.esm.js.map
+        ³               bootstrap.esm.min.js
+        ³               bootstrap.esm.min.js.map
+        ³               bootstrap.js
+        ³               bootstrap.js.map
+        ³               bootstrap.min.js
+        ³               bootstrap.min.js.map
+        ³               
+        ÃÄÄÄjquery
+        ³   ³   LICENSE.txt
+        ³   ³   
+        ³   ÀÄÄÄdist
+        ³           jquery.js
+        ³           jquery.min.js
+        ³           jquery.min.map
+        ³           
+        ÃÄÄÄjquery-validation
+        ³   ³   LICENSE.md
+        ³   ³   
+        ³   ÀÄÄÄdist
+        ³           additional-methods.js
+        ³           additional-methods.min.js
+        ³           jquery.validate.js
+        ³           jquery.validate.min.js
+        ³           
+        ÀÄÄÄjquery-validation-unobtrusive
+                jquery.validate.unobtrusive.js
+                jquery.validate.unobtrusive.min.js
+                LICENSE.txt
+                

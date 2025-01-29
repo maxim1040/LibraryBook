@@ -12,16 +12,16 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["LibraryBook.csproj", "."]
-RUN dotnet restore "./LibraryBook.csproj"
+COPY ["LibraryBook.csproj.user", "."]
+RUN dotnet restore "./LibraryBook.csproj.user"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "./LibraryBook.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet build "./LibraryBook.csproj.user" -c $BUILD_CONFIGURATION -o /app/build
 
 # Cette étape permet de publier le projet de service à copier dans la phase finale
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./LibraryBook.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./LibraryBook.csproj.user" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 # Cette phase est utilisée en production ou lors de l’exécution à partir de VS en mode normal (par défaut quand la configuration de débogage n’est pas utilisée)
 FROM base AS final

@@ -38,12 +38,6 @@ jobs:
         run: |
           sleep 30  # Wait for SQL Server to fully start
 
-      - name: Initialize SQL Server Database
-        run: |
-          docker exec sqlserver /opt/mssql-tools/bin/sqlcmd \
-          -S localhost -U sa -P "Test123." \
-          -Q "CREATE DATABASE LibraryBook;"
-
       - name: Build
         run: dotnet build --no-restore --configuration Release
 

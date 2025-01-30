@@ -34,14 +34,24 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
 
+      - name: Wait for SQL Server to start
+        run: |
+          sleep 30  # Wait for SQL Server to fully start
+
       - name: Build
         run: dotnet build --no-restore --configuration Release
 
       - name: Run Tests
-        run: dotnet test 
+        run: dotnet test  # Add this step to run tests
 
-      - name: Publish
-        run: dotnet publish -c Release -o out
+      - name: Publish the application (Package)
+        run: dotnet publish -c Release -o ./out  # Publish the application to the 'out' folder
+
+      - name: Upload published app as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: librarybook-app
+          path: ./out  # Upload the published output as an artifact
 
   # Build Docker image and push to Docker Hub
   docker-build:
@@ -51,6 +61,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Download the published app artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: librarybook-app
+          path: ./out/
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -68,3 +84,4 @@ jobs:
           dockerfile: Dockerfile
           push: true
           tags: maxim1040/librarybook:latest
+          build-args: ARTIFACT_PATH=./out
